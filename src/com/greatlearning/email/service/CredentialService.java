@@ -1,24 +1,23 @@
 package com.greatlearning.email.service;
 
 
-public class CredentialService {
+public class 
+
+CredentialService {
 	 private String fullName;
 	private String department;
+	private String firstName;
 
-	public CredentialService(String fullName, String department) 
+	public CredentialService(String firstName, String fullName, String department) 
 	  { 
 		  
 	 this.fullName = fullName;
 	 this.department = department;
+	 this.firstName = firstName;
 	  }
 	
-	public String displayCredential() {
-		CredentialServiceImp credSer = new CredentialServiceImp();
-		System.out.println(credSer.generateEmailAddress(fullName,department));
-		return null;
-		
-//		Dear Harshit your generated credentials are as follows
-//		Email ---> harshitchoudary@tech.abc.com
-//		Password ---> 181E@wFT
+	public void displayCredential() {
+		CredentialServiceImp credSer = new CredentialServiceImp(firstName,fullName,department);
+		credSer.showCredentials();
 	}
 }

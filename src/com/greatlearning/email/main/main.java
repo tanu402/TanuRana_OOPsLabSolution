@@ -10,7 +10,7 @@ public class main {
 		Scanner a = new Scanner(System.in);
 
 		int D = a.nextInt();
-		String Dept;
+		String Dept = null;
 	switch (D) {
 	case 1:
 		System.out.println("Technical");
@@ -34,14 +34,14 @@ public class main {
 
 	public static void main(String Args[])
 	{
-		String Firstname ,Lastname;
+		String Firstname ,Lastname, department;
 		Scanner b = new Scanner(System.in);
 		System.out.println("Please select the value of department");
 		System.out.println("1.Technical");
 		System.out.println("2.Admin");
 		System.out.println("3.HR");
 		System.out.println("4.Legal");
-		deptname();
+		department = deptname();
 		System.out.println("Enter your first name");
 		Firstname = b.next();
 		System.out.println("Enter your last name");
@@ -51,7 +51,8 @@ public class main {
 		Employee emp = new Employee(Firstname, Lastname);
 		String name = emp.getName();
 		System.out.println(name);
-		CredentialService cred = new CredentialService(name,);
+		CredentialService cred = new CredentialService(Firstname ,name, department);
+		cred.displayCredential();
 	}
 
 }

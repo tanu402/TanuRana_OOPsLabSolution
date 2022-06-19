@@ -11,6 +11,6 @@ public class Employee {
  this.lastName = lastName;
   }
   public String getName() {
-      return this.firstName + this.lastName;
+      return this.firstName.toLowerCase() + this.lastName.toLowerCase();
   }
 }
